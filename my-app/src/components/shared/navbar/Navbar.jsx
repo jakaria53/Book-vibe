@@ -22,7 +22,8 @@ to={"/page-to-read"
 
     </>
     return (
-       <div className="navbar bg-base-100 shadow-sm">
+      <nav className="bg-base-100 shadow-sm">
+         <div className="navbar container mx-auto">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -46,6 +47,8 @@ to={"/page-to-read"
     <button className="btn btn-accent text-white">SignUp</button>
   </div>
 </div>
+</nav>
+      
     );
 }
 

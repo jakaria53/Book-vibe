@@ -15,8 +15,9 @@ console.log(books , "books from details page");
 const expectedBook = books.find(book => book.bookId === Number(bookId));
 console.log(expectedBook , "expected book");
 const { bookId,bookName , author , image,review, totalPages,rating, category , tags, publisher ,yearOfPublishing } = expectedBook;
+
   return (
-   <div className="grid grid-cols-2 bg-base-100 shadow-sm container mx-auto my-98">
+   <div className="grid grid-cols-2 bg-base-100 shadow-sm container mx-auto my-8">
   <figure className="w-full flex items-center justify-center bg-gray-100 rounded-xl">
     <img
       src={image}

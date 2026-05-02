@@ -1,11 +1,16 @@
 import { createContext, useState } from "react";
 import { toast } from 'react-toastify';
+import {
+  addReadListToLocalDB,
+  getAllReadListFromLocalDB,
+} from "../utils/localDB";
 
 export const BookContext = createContext();
 
 const BookProvider = ({ children }) => {
   const [readList, setReadList] = useState([]);
     const [wishList, setWishList] = useState([]);
+    console.log(readList, "readList");
 
   const handleMarkAsRead = (currentBook) => {
     const isExistBook = readList.find((book) => book.bookId === currentBook.bookId

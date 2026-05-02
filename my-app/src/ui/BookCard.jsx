@@ -1,49 +1,22 @@
 import React from "react";
-import { FaRegStar } from "react-icons/fa";
+import { FaRegStar, FaStar } from "react-icons/fa";
 import { Link } from "react-router";
 
+
+
 const BookCard = ({ book }) => {
-  return (
-        <Link to={`/bookDetails/${book.bookId}`} className="card bg-base-100  shadow-sm">
-  <figure className="p-6">
-    <img
-      src={book.image}
-      alt={book.bookName}
-      className="rounded-xl h-[250px]" />
-  </figure>
-  <div className="card-body">
-    <div className="flex items-center gap-2">
-           <div className="card-body">
-      <div className="flex items-center gap-2">
-         {book.tags.map((tag, index) => (
-          <div key={index}
-          className="badge text-green-500 bg-green-100 font-bold">{tag}</div>
-        ))}
-  {books.map((book) => {
-    return (
-      <div className="card bg-base-100 w-96 shadow-sm">
-        <figure>
-          <img src={book.image} alt={book.bookName} />
-        </figure>
-   
-      </div>
-          <h2 className="card-title text-xl">{book.bookName}</h2>
-          <p className="font-semibold text-lg">{book.author}</p>
-    <div className="card-actions justify-between border-t border-dashed border-gray-300 pt-4 text-xl">
-      <div className="font-semibold">{book.category}</div>
-      <div className="flex gap-2 items-center">{book.rating}<FaRegStar />
-
-
-      </div>
-    </div>
-  </div>
-
-
-    );
-  })}
-  </div>
-</Link>
-    </div>
+const { bookName, author, image, rating, totalPages } = book;    return (
+        <div className="card bg-base-100 shadow-md">
+            <figure>
+                <img src={image} alt={bookName} className="h-64 w-full object-cover" />
+            </figure>
+            <div className="card-body">
+                <h2 className="card-title">{bookName}</h2>
+                <p>Author: {author}</p>
+                <p>Rating: {rating}</p>
+                <p>Pages: {totalPages}</p>
+            </div>
+        </div>
     );
 }
 
